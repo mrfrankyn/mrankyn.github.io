@@ -8,13 +8,15 @@
         color: $main_text
         text-align: center
     &__items
-        display: flex
-        align-items: center
-        flex-direction: row
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(277px, 1fr))
+        // column-gap: 59px
+        row-gap: 25px
+        justify-items: center
         margin-top: 60px
-        text-align: center
     &__item
         width: 260px
+        text-align: center
     &__subheader
         font-weight: 700
         font-size: 18px
