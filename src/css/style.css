@@ -8,9 +8,9 @@
 }
 
 .promo {
-  min-height: 650px;
+  height: 650px;
   padding: 21px 0 93px 0;
-  background-image: url("../../img/background_first.jpg");
+  background-image: url("/../../img/background_first.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -64,6 +64,9 @@
 }
 .promo__link a {
   color: #ffffff;
+}
+.promo__link a:hover {
+  color: #c70101;
 }
 
 .header {
@@ -127,15 +130,237 @@
   line-height: 25px;
   margin-top: 67px;
 }
+.button_submit {
+  width: 100%;
+  width: 303px;
+  height: 58px;
+  background: #C70101;
+  font-size: 16px;
+  line-height: 25px;
+  color: white;
+  text-transform: uppercase;
+}
 
 .advantages {
-  height: 473px;
+  background-color: #F6F6F6;
+  padding: 61px 0 65px 0;
 }
-.advantages__header {
+.advantages__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 210px));
+  -moz-column-gap: 65px;
+       column-gap: 65px;
+  row-gap: 25px;
+  justify-content: center;
+  margin-top: 60px;
+}
+.advantages__item {
+  width: 210px;
+  text-align: center;
+}
+.advantages__subheader {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 29px;
+  margin-top: 35px;
+}
+.advantages__text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 20px;
+}
+.advantages__text a {
+  color: #c70101;
+  font-weight: bold;
+}
+
+.consultation {
+  min-height: 680px;
+  padding: 100px 0 92px 0;
+  background-image: url("../../img/bg2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.consultation__descr {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: left;
+}
+
+.title {
   font-weight: 700;
   font-size: 30px;
   line-height: 30px;
-  color: #0D0D0D;
+  color: #ffffff;
   text-align: center;
-  margin-top: 71px;
+  text-transform: uppercase;
+}
+.title_left {
+  text-align: left;
+  font-size: 36px;
+  line-height: 54px;
+  color: #ffffff;
+}
+
+.feed_form {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.feed_form input {
+  height: 50px;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 15px;
+  border: none;
+  padding: 0 20px;
+  font-weight: 300;
+  font-size: 14px;
+  color: #4B4B4B;
+}
+.feed_form input:nth-child {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+  .promo__wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (max-width: 991px) {
+  .header {
+    justify-content: space-around;
+  }
+  .header__logo img {
+    width: 80%;
+  }
+  .header__official span {
+    font-size: 16px;
+  }
+  .header__contact .button {
+    width: 130px;
+  }
+  .header__phone {
+    font-size: 16px;
+  }
+  .promo__header {
+    font-size: 38px;
+  }
+  .promo__subheader {
+    font-size: 20px;
+  }
+  .promo .button_main {
+    width: 260px;
+  }
+  .promo__link {
+    font-size: 14px;
+  }
+  .advantages__items {
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+  .consultation .title_left {
+    text-align: center;
+  }
+  .consultation__descr {
+    text-align: center;
+  }
+  .consultation .feed_form {
+    margin: 0 auto;
+    margin-top: 36px;
+  }
+}
+@media (max-width: 767px) {
+  .header__phone {
+    display: none;
+  }
+  .header button {
+    display: none;
+  }
+}
+@media (max-width: 629px) {
+  .advantages__items {
+    grid-template-columns: none;
+    grid-auto-flow: row;
+  }
+}
+@media (max-width: 575px) {
+  .header {
+    justify-content: center;
+  }
+  .header__logo {
+    width: 200px;
+  }
+  .header__official {
+    font-size: 10px;
+  }
+  .header__official span {
+    font-size: 14px;
+  }
+  .promo {
+    height: 420px;
+    padding: 21px 5px 20px 5px;
+  }
+  .promo__header {
+    margin-top: 70px;
+    font-size: 30px;
+  }
+  .promo__subheader {
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  .promo__icons {
+    display: none;
+    margin: 0px;
+  }
+  .promo .button_main {
+    font-size: 14px;
+    margin-top: 47px;
+  }
+  .promo .button {
+    width: 220px;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .consultation {
+    padding-top: 60px;
+  }
+  .consultation .title_left {
+    line-height: 30px;
+  }
+}
+@media (max-width: 370px) {
+  .header__logo {
+    width: 100%;
+  }
+  .header__logo img {
+    display: block;
+    margin: 0 auto;
+    width: 160px;
+  }
+  .header__official {
+    display: none;
+  }
+  .promo {
+    padding: 21px 8px 25px 8px;
+  }
+  .promo__header {
+    font-size: 26px;
+  }
+  .promo__subheader {
+    font-size: 14px;
+  }
+  .promo .button_main {
+    margin-top: 35px;
+  }
+  .title {
+    font-size: 22px;
+  }
 }/*# sourceMappingURL=style.css.map */
