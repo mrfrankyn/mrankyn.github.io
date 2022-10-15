@@ -36,6 +36,11 @@
             display: none
         button
             display: none
+@media ( max-width: 629px)
+    .advantages
+        &__items
+            grid-template-columns: none
+            grid-auto-flow: row
 @media ( max-width: 575px)
     .header
         justify-content: center
@@ -60,6 +65,8 @@
         .button_main
             font-size: 14px
             margin-top: 47px
+        .button
+            width: 220px
     .advantages
         &__header
             font-size: 26px
