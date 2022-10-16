@@ -23,7 +23,7 @@ gulp.task('styles', function() {
               }))
             .pipe(autoprefixer({
                 grid: true,
-                overrideBrowserslist: ["last 5 versions"],
+                overrideBrowserslist: ["last 10 versions"],
                 cascade: true
             }))
             .pipe(cleanCSS({compatibility: 'ie8'}))
