@@ -23,8 +23,9 @@ const slider = tns({
   items: 1,
   slideBy: 'page', 
   autoplay: true,
-  autoplayTimeout: 3000,
+  autoplayTimeout: 2000,
   autoplayHoverPause: true,
+  autoplayButtonOutput: false,
   speed: 700,
   nav: false,
   controls: false
