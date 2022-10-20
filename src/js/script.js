@@ -22,7 +22,10 @@ const slider = tns({
   container: '.carousel__inner',
   items: 1,
   slideBy: 'page', 
-  autoplay: false,
+  autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+  speed: 700,
   nav: false,
   controls: false
 });
