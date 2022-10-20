@@ -23,6 +23,9 @@ const slider = tns({
   items: 1,
   slideBy: 'page', 
   autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+  speed: 700,
   nav: false,
   controls: false
 });
