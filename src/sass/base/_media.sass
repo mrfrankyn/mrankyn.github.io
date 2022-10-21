@@ -4,6 +4,32 @@
             flex-direction: column
             align-items: center
             text-align: center
+
+@media ( max-width: 1150px)
+    .carousel
+        &__inner
+            height: 70%
+            width: 70%
+        .tns-item
+            img
+                height: 70%
+                width: 70%  
+        .tns-nav
+            display: block
+            width: 105px
+            margin: 0 auto
+            button
+                height: 20px
+                width: 20px
+                border-color: red
+                border-radius: 50%
+                margin-right: 15px
+                background-color: red
+            .tns-nav-active
+                background-color: #fff
+        .prev, .next
+            display: none
+
 @media ( max-width: 991px)
     .header
         justify-content: space-around

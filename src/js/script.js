@@ -22,12 +22,13 @@ const slider = tns({
   container: '.carousel__inner',
   items: 1,
   slideBy: 'page', 
-  autoplay: true,
+  autoplay: false,
   autoplayTimeout: 2000,
   autoplayHoverPause: true,
   autoplayButtonOutput: false,
   speed: 700,
-  nav: false,
+  nav: true,
+  navPosition: "bottom",
   controls: false
 });
 
