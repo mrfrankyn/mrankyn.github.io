@@ -23,13 +23,17 @@
             button
                 height: 20px
                 width: 40px
-                border-color: $main_color
-                transform: skew(-20deg)
+                border-color: $tab_text_color
+                transform: skew(-25deg)
                 border-radius: 25%
-                margin-right: 15px
-                background-color: $main_color
-            .tns-nav-active
+                margin: 0 7px
                 background-color: #fff
+                transition: 0.5s all
+                &:hover
+                    box-shadow: 3px 3px 20px $main_color
+                    border: none
+            .tns-nav-active
+                background-color:$main_color
         .prev, .next
             display: none
 

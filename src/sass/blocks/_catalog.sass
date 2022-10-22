@@ -1,0 +1,103 @@
+.catalog
+    padding-buttom: 100px
+    &__tabs
+        margin-top: 70px
+        list-style-type: none
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 0
+    &__tab
+        display: block
+        width: 223px
+        height: 52px
+        border: 2px solid #D0D0D0
+        font-weight: 400
+        font-size: 18px
+        line-height: 48px
+        text-transform: uppercase
+        text-align: center
+        color: $tab_text_color
+        transform: skew(-25deg)
+        margin: 0 5px
+        cursor: pointer
+        transition: 0.5s all
+        &:hover
+            // #1,2 смещение; #3 размытие; #4 цвет
+            box-shadow: 3px 3px 20px $main_color
+            border: none
+        div
+            transform: skew(25deg)
+    &__content
+        margin-top: 60px
+    &_active
+        color: #fff
+        background-color: $main_color
+        border: none
+    // Основные стили объекта каталога
+    .catalog-item
+        width: 303px
+        min-height: 442px
+        border: 2px solid #E8E8E8
+        padding: 20px 20px 26px 20px
+        overflow: hidden
+        &__img
+            display: block
+            margin: 0 auto
+            max-width: 100%
+            height: 200px
+        &__subtitle
+            margin-top: 20px
+            font-weight: 700
+            font-size: 16px
+            line-height: 25px
+            text-align: center
+        &__descr
+            font-weight: 300
+            font-size: 14px
+            line-height: 22px
+            margin-top: 15px
+            text-align: center
+        &__link
+            display: block
+            font-weight: 500
+            font-size: 14px
+            line-height: 14px
+            margin-top: 10px
+            text-align: center
+            color: $main-color
+        hr
+            background-color:#E8E8E8
+            height: 2px
+            border-bottom: none
+            margin: 19px 0px 18px 0px
+        &__footer
+            display: flex
+            justify-content: space-between
+        &__old-price
+            font-weight: 300
+            font-size: 14px
+            line-height: 14px
+            text-decoration-line: line-through
+        &__price
+            font-weight: 700
+            font-size: 20px
+            line-height: 30px
+        // Стили для враппера
+        &__wrapper
+            display: flex
+            width: calc(200% + 40px) 
+        &__content
+            width: 50%
+            margin-right: 20px
+            transform: translateX(-100%)
+            &_active
+                transform: translateX(0%)
+                margin-right: 20px
+        &__descr-list
+            width: 50%
+            margin-right: 20px
+            transform: translateX(0%)
+            &:active
+                transform: translateX(-100%)
+                margin-left: 0px
