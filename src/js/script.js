@@ -39,3 +39,24 @@ document.querySelector('.prev').addEventListener('click', function () {
 document.querySelector('.next').addEventListener('click', function () {
   slider.goTo('next');
 });
+
+// Использование jQuery для tabs
+$('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
+  $(this)
+    .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
+    .closest('div.container').find('div.content').removeClass('content_active').eq($(this).index()).addClass('content_active');
+});
+
+function toggleSlide(classItem) {
+  $(classItem).each(function(i){
+    $(this).on('click', function(e){
+      e.preventDefault();
+      $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
+      $('.catalog-item__descr-list').eq(i).toggleClass('catalog-item__descr-list_active');
+  });
+  });
+};
+
+toggleSlide('.catalog-item__link');
+toggleSlide('.catalog-item__back');
+

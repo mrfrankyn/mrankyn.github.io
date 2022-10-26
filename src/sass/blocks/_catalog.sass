@@ -26,14 +26,25 @@
             // #1,2 смещение; #3 размытие; #4 цвет
             box-shadow: 3px 3px 20px $main_color
             border: none
+        &_active
+            color: #fff
+            background-color: $main_color
+            border: none
         div
             transform: skew(25deg)
     &__content
         margin-top: 60px
-    &_active
-        color: #fff
-        background-color: $main_color
-        border: none
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(303px, 303px))
+        column-gap: 17px
+        row-gap: 19px
+        justify-content: center
+
+    .content
+        display: none
+        &_active
+            display: block
+
     // Основные стили объекта каталога
     .catalog-item
         width: 303px
@@ -66,6 +77,7 @@
             margin-top: 10px
             text-align: center
             color: $main-color
+            text-transform: uppercase
         hr
             background-color:#E8E8E8
             height: 2px
@@ -89,15 +101,54 @@
             width: calc(200% + 40px) 
         &__content
             width: 50%
-            margin-right: 20px
+            margin-right: 0px
             transform: translateX(-100%)
+            transition: 0.5s all
             &_active
                 transform: translateX(0%)
                 margin-right: 20px
+        // Описаниеп продукта, после нажатия на "Подробнее"
         &__descr-list
+            position: relative
             width: 50%
-            margin-right: 20px
+            margin-left: 20px
             transform: translateX(0%)
-            &:active
+            transition: 0.5s all
+            padding-left: 0px
+            // padding-right: 20px
+            margin-bottom: 0px
+            list-style-image: none
+            &_active
                 transform: translateX(-100%)
                 margin-left: 0px
+            ul
+                padding-left: 20px
+                padding-right: 15px
+            &-item
+                position: relative
+                font-weight: 300
+                font-size: 14px
+                line-height: 21px
+                color: #555555
+                margin-bottom: 20px
+                list-style: none
+                &:before
+                    content: ''
+                    position: absolute
+                    display: block
+                    width: 5px
+                    height: 5px
+                    background-color: $main-color
+                    left: -20px
+                    top: 7px
+        &__back
+            display: block
+            font-weight: 500
+            font-size: 14px
+            line-height: 14px
+            text-align: center
+            margin: 20px 0
+            color: $main-color
+            text-transform: uppercase
+
+                    
