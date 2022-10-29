@@ -36,7 +36,8 @@
                 background-color:$main_color
         .prev, .next
             display: none
-
+    .feedbacks
+        padding: 83px 20px 48px 20px
 @media ( max-width: 991px)
     .header
         justify-content: space-around
@@ -71,12 +72,32 @@
         .feed_form
             margin: 0 auto
             margin-top: 36px
+    // .feedbacks
+    //     &__item
+    //         grid-template-columns: 1fr
+    //         justify-items: center
+    //         text-align: center
+    //         row-gap: 30px
+    .catalog
+        &__tab
+            font-size: 16px
+            width: 180px
+            height: 36px
+            line-height: 36px
 @media ( max-width: 767px)
     .header
         &__phone
             display: none
         button
             display: none
+    .catalog
+        &__tabs
+            padding: 0 10px
+        &__tab
+            font-size: 12px
+            width: 140px
+            height: 36px
+            line-height: 36px
 // @media ( max-width: 629px)
 //     .advantages
 //         &__items
@@ -134,3 +155,9 @@
             margin-top: 35px
     .title
         font-size: 22px
+    .catalog
+        &__tab
+            font-size: 10px
+            width: 140px
+            height: 30px
+            line-height: 28px
