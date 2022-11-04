@@ -60,3 +60,22 @@ function toggleSlide(classItem) {
 toggleSlide('.catalog-item__link');
 toggleSlide('.catalog-item__back');
 
+// Modal
+// открытие модал консультации
+$('[data-modal=consultation]').on('click', function() {
+  $('.overlay, #consultation').fadeIn(1000);
+});
+ 
+// $('.button_mini').on('click', function() {
+//   $('overlay, #order').fadeIn();
+// });
+// закрытие модал консультации
+$('.modal__close').on('click', function () {
+  $('.overlay, #consultation, #thanks, #order').fadeOut();
+});
+// открытие модал покупка c заменой текста
+$('.button_mini').each(function(i) {
+  $(this).on('click', function() {
+    $('.overlay, #order').fadeIn(1000);
+  })
+});
