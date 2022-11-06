@@ -1,5 +1,5 @@
 // Использование библиотеки "slick"
-// $(document).ready(function(){
+$(document).ready(function() {
 //     $('.carousel__inner').slick({
 //         speed: 800,
 //         adaptiveHeight: false,
@@ -15,67 +15,107 @@
 //           }
 //         ]
 //       });
-// });
+// 
 
-// Использование tiny-slider
-const slider = tns({
-  container: '.carousel__inner',
-  items: 1,
-  slideBy: 'page', 
-  autoplay: false,
-  autoplayTimeout: 2000,
-  autoplayHoverPause: true,
-  autoplayButtonOutput: false,
-  speed: 700,
-  nav: true,
-  navPosition: "bottom",
-  controls: false
-});
-
-document.querySelector('.prev').addEventListener('click', function () {
-  slider.goTo('prev');
-});
-
-document.querySelector('.next').addEventListener('click', function () {
-  slider.goTo('next');
-});
-
-// Использование jQuery для tabs
-$('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
-  $(this)
-    .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
-    .closest('div.container').find('div.content').removeClass('content_active').eq($(this).index()).addClass('content_active');
-});
-
-function toggleSlide(classItem) {
-  $(classItem).each(function(i){
-    $(this).on('click', function(e){
-      e.preventDefault();
-      $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
-      $('.catalog-item__descr-list').eq(i).toggleClass('catalog-item__descr-list_active');
+  // Использование tiny-slider
+  const slider = tns({
+    container: '.carousel__inner',
+    items: 1,
+    slideBy: 'page', 
+    autoplay: false,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
+    autoplayButtonOutput: false,
+    speed: 700,
+    nav: true,
+    navPosition: "bottom",
+    controls: false
   });
+
+  document.querySelector('.prev').addEventListener('click', function () {
+    slider.goTo('prev');
   });
-};
 
-toggleSlide('.catalog-item__link');
-toggleSlide('.catalog-item__back');
+  document.querySelector('.next').addEventListener('click', function () {
+    slider.goTo('next');
+  });
 
-// Modal
-// открытие модал консультации
-$('[data-modal=consultation]').on('click', function() {
-  $('.overlay, #consultation').fadeIn(1000);
-});
- 
-// $('.button_mini').on('click', function() {
-//   $('overlay, #order').fadeIn();
-// });
-// закрытие модал консультации
-$('.modal__close').on('click', function () {
-  $('.overlay, #consultation, #thanks, #order').fadeOut();
-});
-// открытие модал покупка c заменой текста
-$('.button_mini').each(function(i) {
-  $(this).on('click', function() {
-    $('.overlay, #order').fadeIn(1000);
-  })
+  // Использование jQuery для tabs
+  $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
+    $(this)
+      .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
+      .closest('div.container').find('div.content').removeClass('content_active').eq($(this).index()).addClass('content_active');
+  });
+
+  function toggleSlide(classItem) {
+    $(classItem).each(function(i){
+      $(this).on('click', function(e){
+        e.preventDefault();
+        $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
+        $('.catalog-item__descr-list').eq(i).toggleClass('catalog-item__descr-list_active');
+    });
+    });
+  };
+
+  toggleSlide('.catalog-item__link');
+  toggleSlide('.catalog-item__back');
+
+  // Modal
+  // открытие модал консультации
+  $('[data-modal=consultation]').on('click', function() {
+    $('.overlay, #consultation').fadeIn(1000);
+  });
+  
+  // $('.button_mini').on('click', function() {
+  //   $('overlay, #order').fadeIn();
+  // });
+  // закрытие модал консультации
+  $('.modal__close').on('click', function () {
+    $('.overlay, #consultation, #thanks, #order').fadeOut();
+  });
+  // открытие модал покупка c заменой текста
+  $('.button_mini').each(function(i) {
+    $(this).on('click', function() {
+      $('.overlay, #order').fadeIn(1000);
+    })
+  });
+
+  // валидация форм
+  function validForms(form) {
+    $(form).validate({
+      validClass: "success",
+      rules: {
+        name: {
+          required: true,
+          minlength: 2
+        },
+        phone: {
+          required: true,
+          maxlength: 11,
+          minlength: 11
+        },
+        email: {
+          required: true
+        }
+      },       
+      messages: {
+        name: {
+          required: "Укажите ваше имя!",
+          minlength: jQuery.validator.format("Имя должно содержать не менее {0} символов!")
+        },
+        phone: {
+          required: "Укажите ваш номер телефона!",
+          minlength: jQuery.validator.format("Телефон должен состоять из {0} символов!")
+        },
+        email: {
+          required: "Пожалуйста, укажите вашу почту!",
+          email: "Неправильно указан адрес почты"
+        }
+      }  
+    });
+  };
+
+  validForms('#consultation .feed_form');
+  validForms('#order .feed_form');
+  validForms('#consultation_form');
 });
