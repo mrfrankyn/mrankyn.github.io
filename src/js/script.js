@@ -90,9 +90,7 @@ $(document).ready(function() {
           minlength: 2
         },
         phone: {
-          required: true,
-          maxlength: 11,
-          minlength: 11
+          required: true
         },
         email: {
           required: true
@@ -104,8 +102,7 @@ $(document).ready(function() {
           minlength: jQuery.validator.format("Имя должно содержать не менее {0} символов!")
         },
         phone: {
-          required: "Укажите ваш номер телефона!",
-          minlength: jQuery.validator.format("Телефон должен состоять из {0} символов!")
+          required: "Укажите ваш номер телефона!"
         },
         email: {
           required: "Пожалуйста, укажите вашу почту!",
@@ -118,4 +115,7 @@ $(document).ready(function() {
   validForms('#consultation .feed_form');
   validForms('#order .feed_form');
   validForms('#consultation_form');
+
+  // masked input
+  $("input[name=phone]").mask("+7(999) 999-9999");
 });
