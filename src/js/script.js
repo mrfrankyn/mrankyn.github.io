@@ -118,4 +118,23 @@ $(document).ready(function() {
 
   // masked input
   $("input[name=phone]").mask("+7(999) 999-9999");
+
+  // mail sending
+  $('form').submit(function(e) {
+    // Предотвращаем действие браузера по умолчанию 
+    e.preventDefault();
+    // Отправка данных на сервер
+    $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      // Указываем данные, которые отправляем на сервер
+      data: $(this).serialize()
+    }).done(function() {
+      $(this).find("input").val("");
+
+
+      $('form').trigger('reset');
+    });
+    return false; 
+  });
 });
