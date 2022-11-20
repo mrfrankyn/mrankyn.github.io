@@ -1,0 +1,68 @@
+@keyframes heartbeat {
+    from {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    to {transform: scale(1);}
+}   
+
+@keyframes stars {
+    from {margin-left: 50px;
+        width: 30px;
+        transform: rotate(20deg);
+        top: 85px;
+        opacity: 0;
+    }
+    10% {
+        margin-left: 60px;
+        width: 30px;
+        transform: rotate(30deg);
+        top: 75px;
+        opacity: 0;
+    }  
+    20% {
+        margin-left: 70px;
+        width: 30px;
+        transform: rotate(40deg);
+        top: 65px;
+        opacity: 0;
+    }
+    30% {
+        margin-left: 80px;
+        width: 30px;
+        transform: rotate(50deg);
+        top: 55px;
+        opacity: 1;
+    }    
+    40% {
+        margin-left: 90px;
+        width: 30px;
+        transform: rotate(60deg);
+        top: 45px;
+        opacity: 10;
+    }  
+    50% {
+        margin-left: 100px;
+        width: 30px;
+        top: 35px;
+        opacity: 10;
+    }
+    60% {
+        margin-left: 120px;
+        width: 30px;
+        transform: rotate(110deg);
+        top: 45px;
+        opacity: 10;
+    }   
+    75% {
+        margin-left: 140px;
+        width: 30px;
+        transform: rotate(130deg);
+        top: 55px;
+        opacity: 0;
+    }     
+    to {margin-left: 160px;
+        width: 30px;
+        transform: rotate(150deg);
+        top: 75px;
+        opacity: 0;
+    }
+}

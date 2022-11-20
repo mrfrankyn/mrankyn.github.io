@@ -11,6 +11,23 @@
         text-align: center
         margin: 0 auto
         margin-top: 30px
+        .stars
+            position: absolute
+            margin-left: 60px
+            width: 30px
+            transform: rotate(30deg)
+            top: 55px
+            animation-name: stars
+            animation-duration: 1.5s
+            animation-timing-function: ease-in
+            animation-iteration-count: infinite
+            animation-direction: alternate
+            .star1
+                margin-left: 15px
+            .star3
+                margin-left: 15px
+            img
+                width: 50%
     &__subheader
         font-weight: 700
         font-size: 18px
@@ -24,3 +41,15 @@
         a
             color: $main-color
             font-weight: bold
+    &__icon 
+        &_heart
+            animation-name: heartbeat
+            animation-duration: 1.5s
+            animation-timing-function: ease
+            animation-iteration-count: infinite
+            animation-direction: alternate
+        &_sneaker
+            animation: sneaker .7s linear alternate
+            animation-timing-function: ease-out
+
+    

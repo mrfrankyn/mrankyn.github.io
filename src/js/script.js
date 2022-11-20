@@ -137,4 +137,26 @@ $(document).ready(function() {
     });
     return false; 
   });
+
+// smooth scroll and page up
+
+  $(window).scroll(function() {
+    if($(this).scrollTop() > 1000) {
+      $('.page_up').fadeIn();
+    } else {
+      $('.page_up').fadeOut();
+    }
+  });
+
+  const anchorSelector = 'a[href^="#"]';
+    $(anchorSelector).on('click', function (e) {
+    e.preventDefault();
+    const destination = $(this.hash);
+    const scrollPosition
+    = destination.offset().top;
+    const animationDuration = 200;
+    $('html, body').animate({
+    scrollTop: scrollPosition
+    }, animationDuration);
+  });
 });

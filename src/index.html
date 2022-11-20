@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-    <section class="promo">
+    <section id="up" class="promo">
         <div class="container">
             <header class="header">
                 <a href="#" class="header__logo">
@@ -69,17 +69,23 @@
             <h2 class="title">НАШИ ПРЕИМУЩЕСТВА</h2>
             <div class="advantages__items">
                 <div class="advantages__item">
-                    <img src="icons/cup.png" alt="advantages__icon">
+                    <div class="stars">
+                        <img src="icons/star.svg" alt="" class="star1">
+                        <img src="icons/star.svg" alt="" class="star2">
+                        <img src="icons/star.svg" alt="" class="star3">
+                       
+                    </div>
+                    <img src="icons/cup.png" alt="advantages__icon" class="advantages__icon">
                     <div class="advantages__subheader">Делимся опытом</div>
                     <div class="advantages__text">Наши сотрудники всегда готовы поделиться своим опытом, так как сами бегают полумарафоны, переплыли Босфор, готовятся к соревнованиям по триатлону!</div>
                 </div>
                 <div class="advantages__item">
-                    <img src="icons/heart.png" alt="advantages__icon">
+                    <img src="icons/heart.png" alt="advantages__icon" class="advantages__icon advantages__icon_heart">
                     <div class="advantages__subheader">Заботимся о здоровье</div>
                     <div class="advantages__text">Мы работаем для того, чтобы Ваши занятия спортом шли на пользу Вашему здоровью и были в радость Вам и Вашим близким!</div>
                 </div>
                 <div class="advantages__item">
-                    <img src="icons/shoe.png" alt="advantages__icon">
+                    <img src="icons/shoe.png" alt="advantages__icon" class="advantages__icon advantages__icon_sneaker">
                     <div class="advantages__subheader">Учим бегать</div>
                     <div class="advantages__text">Помогаем с обучением правильной технике бега! Дружим с крупнейшей школой бега в России - <a href="#">I LOVE RUNNING.</a></div>
                 </div>
@@ -533,6 +539,9 @@
             <div class="modal__description">Наш менеджер свяжется с вами в ближайшее время!</div>
         </div>
     </div>
+    <a href="#up" class="page_up">
+        <img src="icons/page_up.svg" alt="page_up">
+    </a>
     <!-- slick -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
