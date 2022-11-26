@@ -159,4 +159,7 @@ $(document).ready(function() {
     scrollTop: scrollPosition
     }, animationDuration);
   });
+
+// wow
+  new WOW().init();
 });
